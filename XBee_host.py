@@ -115,11 +115,30 @@ for i in range(20):
     print(mesg)
     time.sleep(1)
 '''
+for i in range(40):
+    print(float(x[i]))
+    print(float(y[i]))
+    print(float(z[i]))
+    print(float(tilt[i]))
+    
+'''
 # draw
 t = np.arange(0,20,1)
-
-
-plt.plot(t,num, color = "blue", linewidth = 1, linestyle = "-", label = "x")
+plt.plot(t,num, color = "blue", linewidth = 1)
 plt.show()
-
+'''
+'''
+t = np.arange(0,20,0.5)
+fig, ax = plt.subplots(2, 1)
+ax[0].plot(t,x,label='X')
+ax[0].plot(t,y,label='Y')
+ax[0].plot(t,z,label='Z')
+ax[0].legend()
+ax[0].set_xlabel('Time')
+ax[0].set_ylabel('Acc Vector')
+ax[1].stem(t,tilt)
+ax[1].set_xlabel('Time')
+ax[1].set_ylabel('Tilt')
+'''
+plt.show()
 s.close()

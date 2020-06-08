@@ -109,14 +109,16 @@ void acc_measure() {
       // pc.printf("%d\n\r%f\n\r%f\n\r%f\n\r",tilt_data[i],tx0_data[i],tx1_data[i],tx2_data[i]);
       wait(0.5);
   }
-  wait(5);
+  wait(3);
   for(i=0;i<40;i++)
   {
     xbee.printf("%f\r\n%f\r\n%f\r\n%d\r\n",tx0_data[i],tx1_data[i],tx2_data[i],tilt_data[i]);
+    wait(0.025);
   }
   for(i=0;i<20;i++)
   {
     xbee.printf("%d\r\n",collection[i]);
+    wait(0.025);  
   } 
 }
 
