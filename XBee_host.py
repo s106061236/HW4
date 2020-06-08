@@ -78,7 +78,7 @@ for i in range(40):
 for i in range(20):
     line=s.readline()
     num.append(line)
-'''
+
 # MQTT connection
 
 host = "localhost"
@@ -109,25 +109,25 @@ mqttc.on_unsubscribe = on_unsubscribe
 mqttc.connect(host, port=1883, keepalive=60)
 
 
-for i in range(20):
-    mesg = x[i] + y [i] + z[i] + num[i]
+for i in range(40):
+    mesg = x[i] + y [i] + z[i] + tilt[i]
     mqttc.publish(topic, mesg)
     print(mesg)
-    time.sleep(1)
-'''
-for i in range(40):
-    print(float(x[i]))
-    print(float(y[i]))
-    print(float(z[i]))
-    print(float(tilt[i]))
-    
-'''
+    time.sleep(0.1)
+
+
+
 # draw
 t = np.arange(0,20,1)
-plt.plot(t,num, color = "blue", linewidth = 1)
+plt.plot(t,num)
 plt.show()
 '''
-'''
+for i in range(40):
+    print(x[i])
+    print(y[i])
+    print(z[i])
+    print(tilt[i])
+    
 t = np.arange(0,20,0.5)
 fig, ax = plt.subplots(2, 1)
 ax[0].plot(t,x,label='X')
@@ -139,6 +139,7 @@ ax[0].set_ylabel('Acc Vector')
 ax[1].stem(t,tilt)
 ax[1].set_xlabel('Time')
 ax[1].set_ylabel('Tilt')
-'''
+
 plt.show()
+'''
 s.close()
